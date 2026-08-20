@@ -44,7 +44,7 @@ export function Page1Heart({
           whileTap={{ scale: 0.96 }}
           className="flex flex-col items-center gap-6"
         >
-          <span className="text-5xl heartbeat">💗</span>
+          <FilledHeart className="h-16 w-16 heartbeat drop-shadow-[0_0_18px_oklch(0.62_0.18_352_/_0.7)]" />
           <span className="rounded-full px-8 py-3.5 font-[var(--font-body)] text-base font-semibold tracking-wide text-[var(--ivory)] shadow-lg"
             style={{ background: "linear-gradient(120deg, var(--ruby), var(--gold))" }}
           >

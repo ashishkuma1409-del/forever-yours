@@ -41,7 +41,11 @@ export function NextButton({
           background: "linear-gradient(120deg, var(--ruby), var(--gold))",
         }}
       >
-        {withHeart && <span className="text-lg">💗</span>}
+        {withHeart && (
+          <svg viewBox="0 0 100 100" className="h-4 w-4" aria-hidden="true">
+            <path d="M50 88 C50 88 10 60 10 36 C10 22 21 12 34 12 C41 12 47 16 50 22 C53 16 59 12 66 12 C79 12 90 22 90 36 C90 60 50 88 50 88 Z" fill="currentColor" />
+          </svg>
+        )}
         {label}
         <span className="text-lg">→</span>
       </motion.button>
