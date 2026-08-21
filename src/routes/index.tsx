@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Proposal() {
-  const [page, setPage] = useState<PageNumber>(1);
+  const [page, setPage] = useState<PageNumber>(0);
   const [audioStarted, setAudioStarted] = useState(false);
   const [muted, setMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
