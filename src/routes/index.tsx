@@ -77,7 +77,9 @@ function Proposal() {
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
             className="flex min-h-screen flex-col"
           >
+            {page === 0 && <Page0Intro onNext={next} />}
             {page === 1 && <Page1Heart onBegin={beginAudio} onNext={next} />}
+
             {page === 2 && <Page2Cupid onNext={next} />}
             {page === 3 && <Page3Memory onNext={next} />}
             {page === 4 && <Page4Gallery onNext={next} />}
