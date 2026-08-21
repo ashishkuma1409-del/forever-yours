@@ -3,7 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { FloatingPetals } from "@/components/proposal/FloatingPetals";
 import { MusicControl } from "@/components/proposal/MusicControl";
+import { Page0Intro } from "@/components/proposal/pages/Page0Intro";
 import { Page1Heart } from "@/components/proposal/pages/Page1Heart";
+
 import { Page2Cupid } from "@/components/proposal/pages/Page2Cupid";
 import { Page3Memory } from "@/components/proposal/pages/Page3Memory";
 import { Page4Gallery } from "@/components/proposal/pages/Page4Gallery";
@@ -34,7 +36,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Proposal() {
-  const [page, setPage] = useState<PageNumber>(1);
+  const [page, setPage] = useState<PageNumber>(0);
   const [audioStarted, setAudioStarted] = useState(false);
   const [muted, setMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -75,7 +77,9 @@ function Proposal() {
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
             className="flex min-h-screen flex-col"
           >
+            {page === 0 && <Page0Intro onNext={next} />}
             {page === 1 && <Page1Heart onBegin={beginAudio} onNext={next} />}
+
             {page === 2 && <Page2Cupid onNext={next} />}
             {page === 3 && <Page3Memory onNext={next} />}
             {page === 4 && <Page4Gallery onNext={next} />}

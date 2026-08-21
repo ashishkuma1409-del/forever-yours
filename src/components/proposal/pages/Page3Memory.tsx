@@ -1,17 +1,19 @@
 import { motion } from "motion/react";
-import memoryPhoto from "@/assets/memory-photo.jpg";
+import memoryPhoto from "@/assets/hands-memory.jpg.asset.json";
 import { NextButton } from "../NextButton";
+import { FilledHeart } from "../HeartIcon";
 import { page3 } from "@/lib/proposal-data";
 
 export function Page3Memory({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center text-center">
+    <div className="flex flex-1 flex-col items-center justify-center py-10 text-center">
       <motion.h2
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="mb-6 font-[var(--font-script)] text-4xl text-[var(--ruby)]"
+        className="mb-6 flex items-center gap-3 font-[var(--font-script)] text-4xl text-[var(--ruby)]"
       >
+        <FilledHeart className="h-6 w-6" />
         {page3.title}
       </motion.h2>
 
@@ -22,16 +24,14 @@ export function Page3Memory({ onNext }: { onNext: () => void }) {
         className="relative"
       >
         <div
-          className="rounded-[1.75rem] p-2"
+          className="rounded-[1.75rem] p-2 shadow-[0_18px_40px_-18px_oklch(0.56_0.22_354_/_0.6)]"
           style={{ background: "linear-gradient(135deg, var(--gold), var(--rose))" }}
         >
           <img
-            src={memoryPhoto}
-            alt="A favourite memory"
-            width={1024}
-            height={1024}
+            src={memoryPhoto.url}
+            alt="Our hands together — the moment it all began"
             loading="lazy"
-            className="h-60 w-60 rounded-[1.4rem] object-cover"
+            className="h-72 w-56 rounded-[1.4rem] object-cover"
           />
         </div>
       </motion.div>

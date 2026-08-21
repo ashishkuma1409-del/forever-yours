@@ -1,5 +1,11 @@
 // All copy & content for "Yes, Vedika". Aryan can edit these in one place.
 
+export const page0 = {
+  line1: "😉 aree madamm jii aap...Sharam aa rhii h jii apkoo dekh k 🫣",
+  line2: "chaliyee start kartee h jii",
+  button: "Chaliyee",
+};
+
 export const page1 = {
   line1: "hey miss vedikaa...here is something for uuu from the depth of my heart.",
   line2: "Madamm jii kyaa aap ready ho?",
@@ -13,7 +19,7 @@ export const page2 = {
 
 export const page3 = {
   title: "Our First Chapter",
-  note: "[Your special memory goes here...] Replace this with the story of our first favourite moment together — the one you still smile about when no one's watching. I remember every second of it.",
+  note: "uss dinn ptaa nhii thaa kii yeh chhota saa itnaa khash moment ban jayegaa ham donoo k liyee... uss dinn se baat aage badhtee gyaa aur ham donoo ekk dusree k aur pass aate gyee thanks for coming in my life betuuu.",
 };
 
 export const page4 = {
@@ -60,4 +66,4 @@ export const page7 = {
   closing: "The End 💗",
 };
 
-export type PageNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type PageNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
