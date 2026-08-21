@@ -3,7 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { FloatingPetals } from "@/components/proposal/FloatingPetals";
 import { MusicControl } from "@/components/proposal/MusicControl";
+import { Page0Intro } from "@/components/proposal/pages/Page0Intro";
 import { Page1Heart } from "@/components/proposal/pages/Page1Heart";
+
 import { Page2Cupid } from "@/components/proposal/pages/Page2Cupid";
 import { Page3Memory } from "@/components/proposal/pages/Page3Memory";
 import { Page4Gallery } from "@/components/proposal/pages/Page4Gallery";
