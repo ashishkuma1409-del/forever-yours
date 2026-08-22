@@ -68,28 +68,55 @@ export function Page2Cupid({ onNext }: { onNext: () => void }) {
         {(stage === "impact" || stage === "done") &&
           Array.from({ length: 12 }, (_, i) => <Petal key={i} angle={(360 / 12) * i} delay={i * 0.04} />)}
 
-        {/* the bow — bigger, bottom-left */}
+        {/* the bow — big, hand-drawn, bottom-left */}
         <motion.div
-          className="absolute bottom-0 left-0 text-7xl"
-          initial={{ opacity: 0, x: -30, rotate: -20 }}
+          className="absolute bottom-1 left-1"
+          initial={{ opacity: 0, x: -30, rotate: -18 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          🏹
+          <svg width={120} height={120} viewBox="0 0 100 100" aria-hidden="true">
+            <path
+              d="M22 8 C64 26 64 74 22 92"
+              fill="none"
+              stroke="var(--gold)"
+              strokeWidth={7}
+              strokeLinecap="round"
+            />
+            <motion.path
+              d={stage === "bow" ? "M22 8 L34 50 L22 92" : "M22 8 L22 92"}
+              fill="none"
+              stroke="oklch(0.45 0.05 350)"
+              strokeWidth={2.4}
+              strokeLinecap="round"
+            />
+          </svg>
         </motion.div>
 
-        {/* arrow flying from the bow straight into the heart's centre */}
+        {/* arrow flying from the bow straight into the heart's exact centre */}
         {stage === "flight" && (
           <motion.div
-            className="absolute bottom-[60px] left-[60px] text-5xl"
-            initial={{ opacity: 1, x: 0, y: 0, rotate: -45 }}
-            animate={{ x: 108, y: -108, rotate: -45, opacity: [1, 1, 0.9] }}
-            transition={{ duration: 0.8, ease: "easeIn" }}
-            style={{ filter: "drop-shadow(0 0 8px oklch(0.85 0.085 75 / 0.8))" }}
+            className="absolute left-1/2 top-1/2"
+            initial={{ x: -150, y: 150, opacity: 1 }}
+            animate={{ x: -6, y: 4, opacity: 1 }}
+            transition={{ duration: 0.85, ease: "easeIn" }}
+            style={{ filter: "drop-shadow(0 0 10px oklch(0.85 0.085 75 / 0.9))" }}
           >
-            ➹
+            <svg width={130} height={130} viewBox="0 0 100 100" className="-translate-x-1/2 -translate-y-1/2 rotate-[-45deg]" aria-hidden="true">
+              {/* shaft */}
+              <line x1="14" y1="86" x2="80" y2="20" stroke="oklch(0.45 0.05 350)" strokeWidth={4} strokeLinecap="round" />
+              {/* heart tip */}
+              <path
+                d="M84 8 C86 14 92 14 92 20 C92 26 84 30 84 30 C84 30 76 26 76 20 C76 14 82 14 84 8 Z"
+                fill="var(--ruby)"
+              />
+              {/* feathers */}
+              <path d="M14 86 L8 72 L22 78 Z" fill="var(--gold)" />
+              <path d="M14 86 L28 92 L22 78 Z" fill="var(--rose)" />
+            </svg>
           </motion.div>
         )}
+
       </div>
 
       {stage === "done" && (
