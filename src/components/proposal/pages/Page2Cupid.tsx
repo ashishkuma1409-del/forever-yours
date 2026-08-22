@@ -28,8 +28,8 @@ export function Page2Cupid({ onNext }: { onNext: () => void }) {
 
   useEffect(() => {
     const t1 = setTimeout(() => setStage("flight"), 900);
-    const t2 = setTimeout(() => setStage("impact"), 1750);
-    const t3 = setTimeout(() => setStage("done"), 2750);
+    const t2 = setTimeout(() => setStage("impact"), 2100);
+    const t3 = setTimeout(() => setStage("done"), 3100);
     return () => [t1, t2, t3].forEach(clearTimeout);
   }, []);
 
@@ -99,7 +99,7 @@ export function Page2Cupid({ onNext }: { onNext: () => void }) {
             className="absolute left-1/2 top-1/2"
             initial={{ x: -150, y: 150, opacity: 1 }}
             animate={{ x: -44, y: 39, opacity: 1 }}
-            transition={{ duration: 0.85, ease: "easeIn" }}
+            transition={{ duration: 1.05, ease: "easeIn" }}
             style={{ filter: "drop-shadow(0 0 10px oklch(0.85 0.085 75 / 0.9))" }}
           >
             <svg width={130} height={130} viewBox="0 0 100 100" className="-translate-x-1/2 -translate-y-1/2" aria-hidden="true">
