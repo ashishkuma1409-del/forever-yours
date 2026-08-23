@@ -11,7 +11,7 @@ export function Page3Memory({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="mb-6 flex items-center gap-3 font-[var(--font-script)] text-4xl text-[var(--ruby)]"
+        className="mb-6 flex items-center gap-3 font-[var(--font-vibes)] text-4xl sm:text-5xl text-[var(--ruby)]"
       >
         <FilledHeart className="h-6 w-6" />
         {page3.title}
@@ -40,7 +40,7 @@ export function Page3Memory({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.8, ease: "easeInOut" }}
-        className="mt-7 max-w-sm font-[var(--font-body)] text-[0.95rem] leading-relaxed text-[var(--maroon)]/80"
+        className="mt-7 max-w-xl font-[var(--font-hand)] text-lg leading-relaxed sm:text-xl text-[var(--maroon)]/80"
       >
         {page3.note}
       </motion.p>
