@@ -5,14 +5,16 @@ import { FloatingPetals } from "@/components/proposal/FloatingPetals";
 import { MusicControl } from "@/components/proposal/MusicControl";
 import { Page0Intro } from "@/components/proposal/pages/Page0Intro";
 import { Page1Heart } from "@/components/proposal/pages/Page1Heart";
-
 import { Page2Cupid } from "@/components/proposal/pages/Page2Cupid";
 import { Page3Memory } from "@/components/proposal/pages/Page3Memory";
 import { Page4Gallery } from "@/components/proposal/pages/Page4Gallery";
 import { Page5Reasons } from "@/components/proposal/pages/Page5Reasons";
+import { PageLoveLetter } from "@/components/proposal/pages/PageLoveLetter";
 import { Page6Question } from "@/components/proposal/pages/Page6Question";
 import { Page7Celebration } from "@/components/proposal/pages/Page7Celebration";
 import type { PageNumber } from "@/lib/proposal-data";
+
+const LAST_PAGE = 8;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,8 +22,7 @@ export const Route = createFileRoute("/")({
       { title: "Yes, Vedika 💗 — A Love Story" },
       {
         name: "description",
-        content:
-          "Something handmade, from the depth of my heart — for Vedika.",
+        content: "Something handmade, from the depth of my heart — for Vedika.",
       },
       { property: "og:title", content: "Yes, Vedika 💗" },
       {
@@ -57,17 +58,17 @@ function Proposal() {
   }, []);
 
   const next = useCallback(
-    () => setPage((p) => (p >= 7 ? p : ((p + 1) as PageNumber))),
+    () =>
+      setPage((p) => (p >= LAST_PAGE ? p : ((p + 1) as PageNumber))),
     [],
   );
 
   // single persistent audio element — never restarts between pages
-  // Aryan: drop your track at public/proposal-music.mp3 to enable music.
   return (
     <div className="romantic-bg relative min-h-screen w-full overflow-x-hidden">
       <FloatingPetals />
 
-      <main className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5">
+      <main className="relative z-10 mx-auto flex min-h-screen w-full max-w-md flex-col px-5 sm:max-w-2xl sm:px-8 lg:max-w-4xl lg:px-10">
         <AnimatePresence mode="wait">
           <motion.section
             key={page}
@@ -79,13 +80,13 @@ function Proposal() {
           >
             {page === 0 && <Page0Intro onNext={next} />}
             {page === 1 && <Page1Heart onBegin={beginAudio} onNext={next} />}
-
             {page === 2 && <Page2Cupid onNext={next} />}
             {page === 3 && <Page3Memory onNext={next} />}
             {page === 4 && <Page4Gallery onNext={next} />}
             {page === 5 && <Page5Reasons onNext={next} />}
-            {page === 6 && <Page6Question onYes={next} />}
-            {page === 7 && <Page7Celebration />}
+            {page === 6 && <PageLoveLetter onNext={next} />}
+            {page === 7 && <Page6Question onYes={next} />}
+            {page === 8 && <Page7Celebration />}
           </motion.section>
         </AnimatePresence>
       </main>
