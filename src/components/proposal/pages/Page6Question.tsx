@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import proposeBg from "@/assets/propose-bg.jpg.asset.json";
 import { fireHeartBurst } from "../confetti";
 import { page6 } from "@/lib/proposal-data";
 
@@ -27,12 +28,22 @@ export function Page6Question({ onYes }: { onYes: () => void }) {
   };
 
   return (
-    <div className="relative flex flex-1 flex-col items-center justify-center text-center">
+    <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden text-center">
+      {/* our proposal photo, heavily blurred (~95%) */}
+      <img
+        src={proposeBg.url}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 h-full w-full scale-125 object-cover"
+        style={{ filter: "blur(34px) saturate(1.05)" }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[oklch(0.98_0.02_40_/_0.55)] via-[oklch(0.95_0.04_350_/_0.5)] to-[oklch(0.93_0.05_354_/_0.65)]" />
+
       <motion.p
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.9, ease: "easeInOut" }}
-        className="max-w-xs font-[var(--font-display)] text-[1.6rem] italic leading-snug text-[var(--ruby)] drop-shadow-sm"
+        className="max-w-lg font-[var(--font-elegant)] text-[1.75rem] font-semibold italic leading-snug text-[var(--ruby)] drop-shadow-sm sm:text-4xl"
       >
         {page6.question}
       </motion.p>
@@ -48,7 +59,7 @@ export function Page6Question({ onYes }: { onYes: () => void }) {
           onClick={onYes}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.94 }}
-          className="glow-pulse inline-flex items-center gap-2 rounded-full px-12 py-4 text-xl font-bold text-[var(--ivory)]"
+          className="glow-pulse inline-flex items-center gap-2 rounded-full px-12 py-4 font-[var(--font-body)] text-xl font-bold text-[var(--ivory)]"
           style={{ background: "linear-gradient(120deg, var(--ruby), var(--gold))" }}
         >
           {page6.yes}
@@ -70,7 +81,7 @@ export function Page6Question({ onYes }: { onYes: () => void }) {
         }}
         animate={{ top: `${pos.top}%`, left: `${pos.left}%` }}
         transition={{ type: "spring", stiffness: 320, damping: 22 }}
-        className="absolute rounded-full border border-[var(--border)] bg-white/70 px-5 py-2 text-sm text-[var(--maroon)]/70 shadow-sm backdrop-blur-sm"
+        className="absolute rounded-full border border-[var(--border)] bg-white/70 px-5 py-2 font-[var(--font-body)] text-sm text-[var(--maroon)]/70 shadow-sm backdrop-blur-sm"
         style={{ top: `${pos.top}%`, left: `${pos.left}%` }}
       >
         {page6.no}
