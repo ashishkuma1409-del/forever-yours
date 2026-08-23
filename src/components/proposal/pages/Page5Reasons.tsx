@@ -14,12 +14,12 @@ export function Page5Reasons({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: -14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="mb-6 text-center font-[var(--font-script)] text-4xl leading-tight text-[var(--ruby)]"
+        className="mb-6 text-center font-[var(--font-vibes)] text-4xl leading-tight text-[var(--ruby)] sm:text-5xl"
       >
         {page5.title}
       </motion.h2>
 
-      <div className="grid w-full max-w-md gap-3 sm:grid-cols-2">
+      <div className="grid w-full max-w-3xl gap-3 sm:grid-cols-2">
         {reasons.map((reason, i) => (
           <motion.div
             key={i}
@@ -34,7 +34,7 @@ export function Page5Reasons({ onNext }: { onNext: () => void }) {
             >
               {i + 1}
             </span>
-            <p className="font-[var(--font-body)] text-sm leading-relaxed text-[var(--maroon)]/85">
+            <p className="font-[var(--font-hand)] text-base leading-relaxed text-[var(--maroon)]/90 sm:text-lg">
               {reason}
             </p>
           </motion.div>

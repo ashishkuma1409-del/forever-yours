@@ -19,7 +19,7 @@ export function Page0Intro({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.9, ease: "easeInOut" }}
-        className="max-w-sm font-[var(--font-script)] text-2xl leading-relaxed text-[var(--ruby)] drop-shadow-sm"
+        className="max-w-xl font-[var(--font-script)] text-2xl leading-relaxed sm:text-3xl text-[var(--ruby)] drop-shadow-sm"
       >
         {page0.line1}
       </motion.p>
@@ -28,7 +28,7 @@ export function Page0Intro({ onNext }: { onNext: () => void }) {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.9, ease: "easeInOut" }}
-        className="font-[var(--font-display)] text-lg italic text-[var(--maroon)]/75"
+        className="font-[var(--font-serif-lux)] text-lg italic sm:text-xl text-[var(--maroon)]/75"
       >
         {page0.line2}
       </motion.p>
