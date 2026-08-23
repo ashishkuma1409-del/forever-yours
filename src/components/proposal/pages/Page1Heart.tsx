@@ -23,12 +23,12 @@ export function Page1Heart({
 
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center text-center">
-      {/* our photo, softly blurred (~60%) + gradient overlay */}
+      {/* our photo, softly blurred (~90%) + gradient overlay */}
       <img
         src={coupleBg.url}
         alt=""
         className="absolute inset-0 -z-10 h-full w-full scale-110 object-cover"
-        style={{ filter: "blur(14px) saturate(1.05)" }}
+        style={{ filter: "blur(30px) saturate(1.08)" }}
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[oklch(0.25_0.06_350_/_0.5)] via-[oklch(0.5_0.12_354_/_0.32)] to-[oklch(0.93_0.045_350_/_0.45)]" />
 

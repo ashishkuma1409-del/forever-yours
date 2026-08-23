@@ -51,6 +51,9 @@
   --font-script: var(--font-dancing);
   --font-vibes: var(--font-vibes);
   --font-body: var(--font-quicksand);
+  --font-serif-lux: var(--font-marcellus);
+  --font-hand: var(--font-kalam);
+  --font-elegant: var(--font-cormorant);
 }
 
 :root {
@@ -89,6 +92,9 @@
   --font-dancing: "Dancing Script", cursive;
   --font-vibes: "Great Vibes", cursive;
   --font-quicksand: "Quicksand", sans-serif;
+  --font-marcellus: "Marcellus", serif;
+  --font-kalam: "Kalam", cursive;
+  --font-cormorant: "Cormorant Garamond", serif;
 }
 
 .dark {
