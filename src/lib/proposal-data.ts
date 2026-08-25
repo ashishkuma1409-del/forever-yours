@@ -173,7 +173,7 @@ export const page7 = {
   ],
   wishNext: "Aakhri page 💗",
   celebrationNext: "Ek chhoti si wish 🙏",
-  thanks: "thnsk uuu veduuu...",
+  thanks: "Thank uuu veduuu...!!!",
   thanksSub: "forever yours, Ashikaa ❤️",
 };
 
