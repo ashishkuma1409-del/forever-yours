@@ -23,14 +23,14 @@ export function Page1Heart({
 
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center text-center">
-      {/* our photo, softly blurred (~90%) + gradient overlay */}
+      {/* our photo, 95% clear (only a whisper of softness) + light veil for text legibility */}
       <img
         src={coupleBg.url}
         alt=""
-        className="absolute inset-0 -z-10 h-full w-full scale-110 object-cover"
-        style={{ filter: "blur(30px) saturate(1.08)" }}
+        className="absolute inset-0 -z-10 h-full w-full scale-105 object-cover"
+        style={{ filter: "blur(1px) saturate(1.05)" }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[oklch(0.25_0.06_350_/_0.5)] via-[oklch(0.5_0.12_354_/_0.32)] to-[oklch(0.93_0.045_350_/_0.45)]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[oklch(0.25_0.06_350_/_0.22)] via-[oklch(0.4_0.1_354_/_0.14)] to-[oklch(0.3_0.08_350_/_0.28)]" />
 
       {stage === "idle" && (
         <motion.button
