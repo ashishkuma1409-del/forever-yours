@@ -65,7 +65,7 @@ export function Page4Gallery({ onNext }: { onNext: () => void }) {
                 animate={{ opacity: 1, scale: 1, rotate: i % 2 ? 1.2 : -1.2 }}
                 transition={{ delay: 0.15 + i * 0.15, duration: 0.6, ease: "easeOut" }}
                 whileHover={{ rotate: 0, scale: 1.02 }}
-                className="mx-auto w-full max-w-xs rounded-[1.4rem] p-1.5 shadow-[0_18px_44px_-14px_oklch(0.56_0.22_354_/_0.55)]"
+                className="mx-auto w-full max-w-sm rounded-[1.4rem] p-1.5 shadow-[0_18px_44px_-14px_oklch(0.56_0.22_354_/_0.55)]"
                 style={{ background: "linear-gradient(135deg, var(--gold), var(--rose))" }}
               >
                 <div className="overflow-hidden rounded-[1.2rem] bg-black/5">
