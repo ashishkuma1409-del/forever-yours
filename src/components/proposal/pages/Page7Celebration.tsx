@@ -18,19 +18,19 @@ function RisingHeart({ delay }: { delay: number }) {
   );
 }
 
+type Step = "celebrate" | "wish" | "thanks";
+
 export function Page7Celebration() {
   const [showMessage, setShowMessage] = useState(false);
-  const [showWish, setShowWish] = useState(false);
+  const [step, setStep] = useState<Step>("celebrate");
 
   useEffect(() => {
     fireBigCelebration();
     const loop = startCelebrationLoop();
     const t = setTimeout(() => setShowMessage(true), 900);
-    const t2 = setTimeout(() => setShowWish(true), 2200);
     return () => {
       clearInterval(loop);
       clearTimeout(t);
-      clearTimeout(t2);
     };
   }, []);
 
@@ -40,7 +40,7 @@ export function Page7Celebration() {
         <RisingHeart key={i} delay={i * 0.6} />
       ))}
 
-      {showMessage && (
+      {step === "celebrate" && showMessage && (
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.92 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
