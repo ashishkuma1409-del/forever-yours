@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { fireBigCelebration, startCelebrationLoop } from "../confetti";
+import { NextButton } from "../NextButton";
 import { page7 } from "@/lib/proposal-data";
 
 function RisingHeart({ delay }: { delay: number }) {
@@ -17,19 +18,19 @@ function RisingHeart({ delay }: { delay: number }) {
   );
 }
 
+type Step = "celebrate" | "wish" | "thanks";
+
 export function Page7Celebration() {
   const [showMessage, setShowMessage] = useState(false);
-  const [showWish, setShowWish] = useState(false);
+  const [step, setStep] = useState<Step>("celebrate");
 
   useEffect(() => {
     fireBigCelebration();
     const loop = startCelebrationLoop();
     const t = setTimeout(() => setShowMessage(true), 900);
-    const t2 = setTimeout(() => setShowWish(true), 2200);
     return () => {
       clearInterval(loop);
       clearTimeout(t);
-      clearTimeout(t2);
     };
   }, []);
 
@@ -39,7 +40,7 @@ export function Page7Celebration() {
         <RisingHeart key={i} delay={i * 0.6} />
       ))}
 
-      {showMessage && (
+      {step === "celebrate" && showMessage && (
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.92 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -52,11 +53,17 @@ export function Page7Celebration() {
           <p className="font-[var(--font-serif-lux)] text-lg italic text-[var(--ruby)]">
             {page7.closing}
           </p>
+          <NextButton
+            label={page7.celebrationNext}
+            onClick={() => setStep("wish")}
+            delay={1.4}
+            withHeart
+          />
         </motion.div>
       )}
 
-      {/* the wish letter for Bappa */}
-      {showWish && (
+      {/* the wish letter for Bappa — its own page */}
+      {step === "wish" && (
         <motion.article
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +95,36 @@ export function Page7Celebration() {
               </motion.p>
             ))}
           </div>
+          <div className="mt-7 flex justify-center">
+            <NextButton
+              label={page7.wishNext}
+              onClick={() => setStep("thanks")}
+              delay={page7.wish.length * 0.25 + 0.6}
+              withHeart
+            />
+          </div>
         </motion.article>
+      )}
+
+      {/* the big thank-you finale */}
+      {step === "thanks" && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="relative z-10 flex flex-col items-center gap-5 px-4"
+        >
+          <motion.p
+            animate={{ scale: [1, 1.03, 1] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+            className="shimmer-text font-[var(--font-vibes)] text-6xl leading-[1.05] drop-shadow-[0_4px_20px_oklch(0.56_0.22_354_/_0.35)] sm:text-8xl lg:text-9xl"
+          >
+            {page7.thanks}
+          </motion.p>
+          <p className="font-[var(--font-serif-lux)] text-xl italic text-[var(--ruby)] sm:text-2xl">
+            {page7.thanksSub}
+          </p>
+        </motion.div>
       )}
     </div>
   );
