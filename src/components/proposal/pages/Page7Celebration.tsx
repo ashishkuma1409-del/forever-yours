@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { fireBigCelebration, startCelebrationLoop } from "../confetti";
+import { NextButton } from "../NextButton";
 import { page7 } from "@/lib/proposal-data";
 
 function RisingHeart({ delay }: { delay: number }) {
