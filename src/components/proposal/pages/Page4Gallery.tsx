@@ -77,7 +77,7 @@ export function Page4Gallery({ onNext }: { onNext: () => void }) {
                     className="h-72 w-full object-cover sm:h-80"
                   />
                 </div>
-                <figcaption className="px-2 py-2 font-[var(--font-body)] text-sm font-medium text-[var(--ivory)] drop-shadow">
+                <figcaption className="mt-1.5 rounded-[1rem] bg-white/85 px-3.5 py-3 text-left font-[var(--font-hand)] text-base leading-relaxed text-[var(--maroon)] shadow-inner sm:text-lg">
                   {p.caption}
                 </figcaption>
               </motion.figure>
