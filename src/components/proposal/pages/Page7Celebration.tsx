@@ -53,11 +53,17 @@ export function Page7Celebration() {
           <p className="font-[var(--font-serif-lux)] text-lg italic text-[var(--ruby)]">
             {page7.closing}
           </p>
+          <NextButton
+            label={page7.celebrationNext}
+            onClick={() => setStep("wish")}
+            delay={1.4}
+            withHeart
+          />
         </motion.div>
       )}
 
-      {/* the wish letter for Bappa */}
-      {showWish && (
+      {/* the wish letter for Bappa — its own page */}
+      {step === "wish" && (
         <motion.article
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
