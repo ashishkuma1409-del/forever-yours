@@ -162,8 +162,8 @@ export const page6 = {
 };
 
 export const page7 = {
-  finalMessage: "I love you, Vedika. Forever starts now.",
-  closing: "The End 💗",
+  finalMessage: "I love you, Veduuu. Forever till my last breath.",
+  closing: "💗",
   wishTitle: "Ek chhoti si wish 🙏",
   wish: [
     "Bappa, bas ek chhoti si wish hai… 🙏❤️",
