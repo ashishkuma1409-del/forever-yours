@@ -171,6 +171,10 @@ export const page7 = {
     "Aur Bappa… agar ho sake, toh uski har khushi mein mujhe bhi uske saath rakhna. ❤️",
     "Ganpati Bappa Morya! 🌺🙏",
   ],
+  wishNext: "Aakhri page 💗",
+  celebrationNext: "Ek chhoti si wish 🙏",
+  thanks: "thnsk uuu veduuu...",
+  thanksSub: "forever yours, Ashikaa ❤️",
 };
 
 export type PageNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
