@@ -31,33 +31,67 @@ export const galleryChapters: {
   {
     title: "Happy Moment",
     subtitle: "wo hansi, wo raat, wo hum donoo 💗",
-    photos: [{ key: "happy", caption: "Happy Moment 💗" }],
+    photos: [
+      {
+        key: "happy",
+        caption:
+          "tumharee sath bitayee huee time special aur memorable ban jatii h. Tum merii life kaa happy moment ho. you are too special for me 💗",
+      },
+    ],
   },
   {
     title: "Birthday Special",
     subtitle: "tumhara din, meri sabse pyaari yaad 🎂",
     photos: [
-      { key: "bday1", caption: "Happy Birthday Girl 🎂" },
-      { key: "bday2", caption: "wo cake, wo smile ✨" },
+      {
+        key: "bday1",
+        caption:
+          "tumharaa birthday tumharee liyee khash hogaa hii, ussee jyadaa tumharaa birthday meree liyee khash. 19 may is one of the best day of year for me 🎂",
+      },
+      {
+        key: "bday2",
+        caption:
+          "tum specially birthday k dinn ekk chhoti sii jaan kii tarah lgtii ho jisko mai kbhii khona nhii chahtaa aur hmeshaa apnee pass rakhna chahtaa huu ✨",
+      },
     ],
   },
   {
     title: "Tour Special",
     subtitle: "ghumna sirf bahana tha, saath rehna asli plan 🌿",
     photos: [
-      { key: "tour1", caption: "Us, under the trees 🌳" },
-      { key: "tour2", caption: "Obsessed : ) 💚" },
+      {
+        key: "tour1",
+        caption:
+          "ghumna toh bss bahnaa rehta h, real me toh mujhe tumharee sath time spend aur tumhee khush dekhnaa rehtaa h 🌳",
+      },
+      {
+        key: "tour2",
+        caption:
+          "Mai tumharee sath iss life ko explore karna chahtaa huu... kyaa tum meraa hamsafar bannaa chaho gii kyaa 💚",
+      },
     ],
   },
   {
     title: "Pooja",
     subtitle: "bhagwan ke saamne bhi tum hi maangi thi 🙏",
-    photos: [{ key: "pooja", caption: "Pooja day 🌺" }],
+    photos: [
+      {
+        key: "pooja",
+        caption:
+          "tumharee sath pooja karnee kaa feel hii alag hai... Tum pooja karo aur mai tumharee sath reh kar tumhee dekhu... abh toh mujhee pooja karne kaa mnn bhi nhii kartaa lekin jbb pooja tumharee sath karnaa ho i am always ready... waisee toh tum meree liyee koii devii se kam nhii ho, pooja toh mai apkaa bhi krnaa chahuu 🌺",
+      },
+    ],
   },
   {
     title: "Our Beautiful Memory",
     subtitle: "chhat, thandi hawa aur tum ❤️",
-    photos: [{ key: "memory", caption: "Our beautiful memory 🌙" }],
+    photos: [
+      {
+        key: "memory",
+        caption:
+          "yeh pic k baree me jitna khash boluu utnaa kam h, yeh pic meree life kaa best pic h aur yeh moment meree life kaa abh takk kaa best moment h 🌙",
+      },
+    ],
   },
 ];
 
