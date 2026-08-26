@@ -8,6 +8,8 @@ import tour2 from "@/assets/gal-tour-2.jpg.asset.json";
 import pooja from "@/assets/gal-pooja.jpg.asset.json";
 import memory from "@/assets/gal-memory.jpg.asset.json";
 import { NextButton } from "../NextButton";
+import { FilledHeart } from "../HeartIcon";
+
 import { galleryChapters, page4, type GalleryKey } from "@/lib/proposal-data";
 
 const SRC: Record<GalleryKey, string> = {
