@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import proposeBg from "@/assets/propose-bg.jpg.asset.json";
+import proposeCouple from "@/assets/propose-couple.jpg.asset.json";
 import { fireHeartBurst } from "../confetti";
 import { page6 } from "@/lib/proposal-data";
 
