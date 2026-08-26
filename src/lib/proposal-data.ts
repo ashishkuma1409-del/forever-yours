@@ -56,18 +56,18 @@ export const galleryChapters: {
     ],
   },
   {
-    title: "Tour Special",
-    subtitle: "ghumna sirf bahana tha, saath rehna asli plan 🌿",
+    title: "Two hearts,one journey💏 ",
+    subtitle: "Your happiness most matter for me💕🤗 ",
     photos: [
       {
         key: "tour1",
         caption:
-          "ghumna toh bss bahnaa rehta h, real me toh mujhe tumharee sath time spend aur tumhee khush dekhnaa rehtaa h 🌳",
+          "ghumna toh bss bahnaa rehta h, real me toh mujhe tumharee sath time spend aur tumhee khush dekhnaa rehtaa h 🌳\n🚂🚂🚎🚌",
       },
       {
         key: "tour2",
         caption:
-          "Mai tumharee sath iss life ko explore karna chahtaa huu... kyaa tum meraa hamsafar bannaa chaho gii kyaa 💚",
+          "Journey everywhere with you to make some new and special memories😍💏tum sath ho toh har journey meree liyee khash bann jatii h🚂🚂\n\n",
       },
     ],
   },
