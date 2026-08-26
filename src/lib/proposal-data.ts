@@ -29,13 +29,13 @@ export const galleryChapters: {
   photos: { key: GalleryKey; caption: string }[];
 }[] = [
   {
-    title: "Happy Moment",
-    subtitle: "wo hansi, wo raat, wo hum donoo 💗",
+    title: "Memory made with you",
+    subtitle: " we look precious together💗",
     photos: [
       {
         key: "happy",
         caption:
-          "tumharee sath bitayee huee time special aur memorable ban jatii h. Tum merii life kaa happy moment ho. you are too special for me 💗",
+          "tumharee sath bitayee huee time special aur memorable ban jatii h. Tum merii life kaa best moment ho. you are soo special for me 💗",
       },
     ],
   },
@@ -105,7 +105,7 @@ export type GalleryKey =
   | "memory";
 
 export const page4 = {
-  title: "Gallery of Us",
+  title: "CAPTURED MEMORY OF US",
 };
 
 export const page5 = {
