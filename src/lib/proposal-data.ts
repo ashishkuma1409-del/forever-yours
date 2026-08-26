@@ -111,15 +111,15 @@ export const page4 = {
 export const page5 = {
   title: "Reasons Why You're Very Special",
   reasons: [
-    "apkaa caring nature apkoo hameshaa special bnatii h",
-    "tum mujhee hameshaa 1 priority detii ho 🤗",
-    "Tumharee sath rehnee pe mujhee fully comfort bilkul apnee jaisaa feel krtaa huu..!!",
+    "Apkaa caring nature apkoo hameshaa special bnatii h...Your caring nature touch my heart 💞",
+    "Tum mujhee hameshaa first priority detii ho 🤗 jo kii ham donoo k bond ko special aur kbhi tootne nhii detaa 💫",
+    "Tumharee sath rehnee pe mujhee fully comfort bilkul apnee jaisaa feel krtaa huu..!! ☺️",
     "Meree liyee tumharaa presence hii enough h 💓",
     "Tumharee sath silence bhi mujhee precious moment feel hotaa h 💎",
     "Apkee sath meraa future imagine krnaa dil ko bhuut sukoon detaa h 😇",
     "Tumko dekh k meree face pe automatic ekk smile aa jataa h 😊",
-    "ptaa Nhii parr kyuu apkoo hameshaa khone se dartaa huu 🥺 kahii aap kisii se reason se durr naa chll jaoo 😕",
-    "You are not my favourite person only you are my favourite feeling also my darling 💗",
+    "Ptaa Nhii parr kyuu apkoo hameshaa khone se dartaa huu 🥺 kahii aap kisii reason se durr naa chll jaoo 😕",
+    "You are not my favourite person only...you are my favourite feeling also my darling 💗",
     "Saree reasons khtam ho jayee gee yaar lekin mujhee apkoo pasand karnee kaa reason kbhii khtam Nhii hogaa 🥹😍😊",
   ],
 };
