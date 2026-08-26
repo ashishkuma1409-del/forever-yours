@@ -20,95 +20,9 @@ const SRC: Record<GalleryKey, string> = {
   memory: memory.url,
 };
 
-/** A romantic 3D flip card: ornate back → the real photo. */
-function FlipPhoto({
-  src,
-  alt,
-  flipped,
-  onToggle,
-}: {
-  src: string;
-  alt: string;
-  flipped: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div
-      className="rounded-[1.2rem]"
-      style={{ perspective: "1200px" }}
-    >
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-label={flipped ? "Hide this memory" : "Tap to reveal this memory"}
-        aria-pressed={flipped}
-        className="relative block h-72 w-full cursor-pointer overflow-hidden rounded-[1.2rem] bg-black/5 sm:h-80"
-        style={{
-          transformStyle: "preserve-3d",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
-      >
-        {/* back (shown first) */}
-        <span
-          className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-[1.2rem]"
-          style={{
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
-            background:
-              "radial-gradient(circle at 30% 20%, oklch(0.98 0.02 40) 0%, transparent 55%), radial-gradient(circle at 75% 80%, oklch(0.95 0.045 350) 0%, transparent 55%), linear-gradient(150deg, oklch(0.97 0.02 45) 0%, oklch(0.93 0.05 352) 100%)",
-            boxShadow: "inset 0 0 0 1px oklch(0.85 0.06 354 / 0.6)",
-          }}
-        >
-          <span
-            className="pointer-events-none absolute inset-3 rounded-[0.9rem]"
-            style={{
-              border: "1px solid oklch(0.85 0.085 75 / 0.85)",
-              boxShadow: "inset 0 0 0 3px oklch(1 0 0 / 0.45)",
-            }}
-          />
-          <span className="pointer-events-none absolute inset-0 select-none font-[var(--font-body)] text-[var(--rose)]/35">
-            <span className="absolute left-6 top-7 text-xs">✦</span>
-            <span className="absolute right-8 top-12 text-sm">❀</span>
-            <span className="absolute left-10 bottom-14 text-sm">❀</span>
-            <span className="absolute right-7 bottom-9 text-xs">✦</span>
-            <span className="absolute left-1/2 top-10 -translate-x-1/2 text-[0.65rem]">✧</span>
-          </span>
-          <span className="glow-pulse text-3xl text-[var(--ruby)]">❤</span>
-          <span className="font-[var(--font-vibes)] text-2xl text-[var(--ruby)]">
-            A hidden memory
-          </span>
-          <span className="font-[var(--font-body)] text-[0.7rem] uppercase tracking-[0.3em] text-[var(--maroon)]/55">
-            Tap to reveal ❤️
-          </span>
-        </span>
-
-        {/* front (the real photo) */}
-        <span
-          className="absolute inset-0 rounded-[1.2rem] overflow-hidden"
-          style={{
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
-          }}
-        >
-          <img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            draggable={false}
-            className="h-full w-full object-cover"
-          />
-        </span>
-      </button>
-    </div>
-  );
-}
-
 /** Gallery of Us — 5 chapters, each shown as its own little page. */
 export function Page4Gallery({ onNext }: { onNext: () => void }) {
   const [chapter, setChapter] = useState(0);
-  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
   const total = galleryChapters.length;
   const current = galleryChapters[chapter]!;
   const isLast = chapter === total - 1;
@@ -154,14 +68,15 @@ export function Page4Gallery({ onNext }: { onNext: () => void }) {
                 className="mx-auto w-full max-w-sm rounded-[1.4rem] p-1.5 shadow-[0_18px_44px_-14px_oklch(0.56_0.22_354_/_0.55)]"
                 style={{ background: "linear-gradient(135deg, var(--gold), var(--rose))" }}
               >
-                <FlipPhoto
-                  src={SRC[p.key]}
-                  alt={p.caption}
-                  flipped={!!revealed[p.key]}
-                  onToggle={() =>
-                    setRevealed((r) => ({ ...r, [p.key]: !r[p.key] }))
-                  }
-                />
+                <div className="overflow-hidden rounded-[1.2rem] bg-black/5">
+                  <img
+                    src={SRC[p.key]}
+                    alt={p.caption}
+                    loading="lazy"
+                    draggable={false}
+                    className="h-72 w-full object-cover sm:h-80"
+                  />
+                </div>
                 <figcaption className="mt-1.5 rounded-[1rem] bg-white/85 px-3.5 py-3 text-left font-[var(--font-hand)] text-base leading-relaxed text-[var(--maroon)] shadow-inner sm:text-lg">
                   {p.caption}
                 </figcaption>
