@@ -162,7 +162,7 @@ export const page6 = {
 };
 
 export const page7 = {
-  finalMessage: "I love you, Veduuu. Forever till my last breath.",
+  finalMessage: "I love you, Veduuu🌹🌹. Forever till my last breath.",
   closing: "💗",
   wishTitle: "Ek chhoti si wish 🙏",
   wish: [
