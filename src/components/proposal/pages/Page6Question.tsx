@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import proposeBg from "@/assets/propose-bg.jpg.asset.json";
+import proposeCouple from "@/assets/propose-couple.jpg.asset.json";
 import { fireHeartBurst } from "../confetti";
 import { page6 } from "@/lib/proposal-data";
 
@@ -29,15 +29,15 @@ export function Page6Question({ onYes }: { onYes: () => void }) {
 
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden text-center">
-      {/* our proposal photo, heavily blurred (~95%) */}
+      {/* our proposal photo, ~70% visible behind the question */}
       <img
-        src={proposeBg.url}
+        src={proposeCouple.url}
         alt=""
         aria-hidden="true"
-        className="fixed inset-0 -z-10 h-full w-full scale-110 object-cover"
-        style={{ filter: "blur(34px) saturate(1.05)" }}
+        className="fixed inset-0 -z-10 h-full w-full object-cover"
+        style={{ opacity: 0.7 }}
       />
-      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[oklch(0.98_0.02_40_/_0.55)] via-[oklch(0.95_0.04_350_/_0.5)] to-[oklch(0.93_0.05_354_/_0.65)]" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[oklch(0.98_0.02_40_/_0.3)] via-[oklch(0.95_0.04_350_/_0.3)] to-[oklch(0.93_0.05_354_/_0.4)]" />
 
       <motion.p
         initial={{ opacity: 0, y: 18 }}
