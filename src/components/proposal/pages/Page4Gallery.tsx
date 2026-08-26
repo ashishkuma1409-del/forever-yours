@@ -20,7 +20,74 @@ const SRC: Record<GalleryKey, string> = {
   memory: memory.url,
 };
 
-/** Gallery of Us — 5 chapters, each shown as its own little page. */
+/** Face-down photo card that flips 180° in 3D to reveal the original photo. */
+function FlipPhoto({ src, alt }: { src: string; alt: string }) {
+  const [revealed, setRevealed] = useState(false);
+
+  return (
+    <div className="overflow-hidden rounded-[1.2rem] bg-black/5" style={{ perspective: 1200 }}>
+      <button
+        type="button"
+        onClick={() => setRevealed((r) => !r)}
+        aria-label={revealed ? "Photo dikh rahi hai" : "Click to reveal"}
+        className="relative block h-72 w-full cursor-pointer sm:h-80"
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        <motion.div
+          className="absolute inset-0"
+          animate={{ rotateY: revealed ? 180 : 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* back side (shown first) */}
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-[1.2rem] border border-[var(--gold)]/60 text-center"
+            style={{
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              background:
+                "radial-gradient(circle at 30% 20%, oklch(0.98 0.02 40) 0%, oklch(0.94 0.045 350) 60%, oklch(0.9 0.06 352) 100%)",
+              boxShadow: "inset 0 0 0 6px oklch(1 0 0 / 0.55), inset 0 0 22px oklch(0.62 0.18 352 / 0.2)",
+            }}
+          >
+            <span className="absolute left-3 top-3 text-sm text-[var(--rose)]/70">✦</span>
+            <span className="absolute right-4 top-5 text-xs text-[var(--gold)]">✿</span>
+            <span className="absolute bottom-4 left-5 text-xs text-[var(--gold)]">✧</span>
+            <span className="absolute bottom-3 right-3 text-sm text-[var(--rose)]/70">❀</span>
+
+            <FilledHeart className="h-8 w-8 animate-[heartbeat_1.6s_ease-in-out_infinite] text-[var(--ruby)]" />
+            <span className="font-[var(--font-vibes)] text-3xl text-[var(--ruby)]">
+              click to reveal
+            </span>
+            <span className="font-[var(--font-body)] text-[0.65rem] uppercase tracking-[0.3em] text-[var(--maroon)]/45">
+              ek yaad chhupi hai
+            </span>
+          </div>
+
+          {/* front side (the real photo, untouched) */}
+          <div
+            className="absolute inset-0 overflow-hidden rounded-[1.2rem]"
+            style={{
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+            }}
+          >
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              draggable={false}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </button>
+    </div>
+  );
+}
+
+
 export function Page4Gallery({ onNext }: { onNext: () => void }) {
   const [chapter, setChapter] = useState(0);
   const total = galleryChapters.length;
@@ -68,20 +135,13 @@ export function Page4Gallery({ onNext }: { onNext: () => void }) {
                 className="mx-auto w-full max-w-sm rounded-[1.4rem] p-1.5 shadow-[0_18px_44px_-14px_oklch(0.56_0.22_354_/_0.55)]"
                 style={{ background: "linear-gradient(135deg, var(--gold), var(--rose))" }}
               >
-                <div className="overflow-hidden rounded-[1.2rem] bg-black/5">
-                  <img
-                    src={SRC[p.key]}
-                    alt={p.caption}
-                    loading="lazy"
-                    draggable={false}
-                    className="h-72 w-full object-cover sm:h-80"
-                  />
-                </div>
+                <FlipPhoto src={SRC[p.key]} alt={p.caption} />
                 <figcaption className="mt-1.5 rounded-[1rem] bg-white/85 px-3.5 py-3 text-left font-[var(--font-hand)] text-base leading-relaxed text-[var(--maroon)] shadow-inner sm:text-lg">
                   {p.caption}
                 </figcaption>
               </motion.figure>
             ))}
+
           </div>
         </motion.div>
       </AnimatePresence>
