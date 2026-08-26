@@ -19,7 +19,7 @@ export const page2 = {
 
 export const page3 = {
   title: "Our First Chapter",
-  note: "uss dinn ptaa nhii thaa kii yeh chhota saa itnaa khash moment ban jayegaa ham donoo k liyee... uss dinn se baat aage badhtee gyaa aur ham donoo ekk dusree k aur pass aate gyee thanks for coming in my life betuuu.",
+  note: "Uss dinn ptaa nhii thaa kii yeh chhota saa pal itnaa khash moment ban jayegaa, ham donoo k liyee... uss dinn se normal saa baat aage badhtee gyaa aur ham donoo ekk dusree k aur pass aate gyee thanks for coming in my life betuuu...!!",
 };
 
 /** Gallery of Us — 5 chapters, each its own little page. */
