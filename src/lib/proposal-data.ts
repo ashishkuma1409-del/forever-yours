@@ -72,13 +72,13 @@ export const galleryChapters: {
     ],
   },
   {
-    title: "Pooja",
-    subtitle: "bhagwan ke saamne bhi tum hi maangi thi 🙏",
+    title: "Devii jii 🙏",
+    subtitle: "bhagwan ke saamne bhi tumhe hii maangu 🙏",
     photos: [
       {
         key: "pooja",
         caption:
-          "tumharee sath pooja karnee kaa feel hii alag hai... Tum pooja karo aur mai tumharee sath reh kar tumhee dekhu... abh toh mujhee pooja karne kaa mnn bhi nhii kartaa lekin jbb pooja tumharee sath karnaa ho i am always ready... waisee toh tum meree liyee koii devii se kam nhii ho, pooja toh mai apkaa bhi krnaa chahuu 🌺",
+          "tumharee sath pooja karnee kaa feel hii alag hai... Tum pooja karo aur mai tumharee sath reh kar tumhee dekhu... abh toh mujhee pooja karne kaa mnn bhi nhii kartaa lekin jbb pooja tumharee sath karnaa ho i am always ready... waisee toh tum meree liyee koii devii se kam nhii ho, pooja toh mai apkaa bhi krnaa chahuu 🙏🌺",
       },
     ],
   },
