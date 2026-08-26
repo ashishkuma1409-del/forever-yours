@@ -127,7 +127,7 @@ export const page5 = {
 /** The big love-letter envelope page. */
 export const loveLetter = {
   coverLabel: "open me madamm jii 💗",
-  to: "To: myy prettiest cutest girl 🫀❤",
+  to: "To: myy prettiest cutest & precious girl 🫀❤",
   subject: "Subject:  Dil kaa baat pahunchanaa..!!👉🏻💌👈🏻",
   greeting: "Dear Madamm jii ✨,",
   body: [
@@ -143,7 +143,7 @@ export const loveLetter = {
     { label: "Desired Duration", value: "Forever ♾️" },
   ],
   finalRequestLabel: "Final Request:",
-  finalRequest: "Kya Veduuu, tum merii iss application ko “Approved ❤️” karogi?",
+  finalRequest: "Veduuu, kyaa tum merii iss application ko “Approved ❤️” karogi?",
   signatureLabel: "Signature:",
   signature: "Ashikaa",
   next: "Aage badhoo",
