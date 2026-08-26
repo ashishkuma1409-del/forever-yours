@@ -83,13 +83,13 @@ export const galleryChapters: {
     ],
   },
   {
-    title: "Our Beautiful Memory",
-    subtitle: "chhat, thandi hawa aur tum ❤️",
+    title: "Best moment ever 💗💝",
+    subtitle: "First night, first pic & first hug🫂 ❤️",
     photos: [
       {
         key: "memory",
         caption:
-          "yeh pic k baree me jitna khash boluu utnaa kam h, yeh pic meree life kaa best pic h aur yeh moment meree life kaa abh takk kaa best moment h 🌙",
+          "Yeh raat maine apkoo pehli baar saree me dekha tha, aur mai apkoo sach batau toh mera dil ek pal ke liye ruk sa gaya tha. Tum itni khoobsurat lag rahi thi ki main bas tumhe dekhta hi reh gaya. Phir jab main tumhare itna kareeb aaya, wo ehsaas ekk alag hii special feel de rhaa thaa, jaise pehli baar dil ne kisi ko itna kareeb se mehsoos kiya ho. Usi raat humne apni pehli photo sath mein khichwayi , aur uske baad maine tumhe pehli baar hug kiya. Tumhe sach kahu, woh hug ki feeling, wo touch, main aaj tak nahi bhoola, aur kabhi nahi bhoolunga.",
       },
     ],
   },
